@@ -1,3 +1,5 @@
+> Note: this is a fork maintained by Cognician, purely to add `with-bindings` support
+
 # sieppari [![cljdoc badge](https://cljdoc.org/badge/metosin/sieppari)](https://cljdoc.org/d/metosin/sieppari/CURRENT)
 
 

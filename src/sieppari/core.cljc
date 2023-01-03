@@ -17,7 +17,9 @@
 (defn- -try [ctx f]
   (if f
     (try
-      (let [ctx* (f ctx)]
+      (let [ctx* #?(:clj (with-bindings (or (:bindings ctx) {})
+                           (f ctx))
+                    :cljs (f ctx))]
         (if (a/async? ctx*)
           (a/catch ctx* (fn [e] (assoc ctx :error e)))
           ctx*))
