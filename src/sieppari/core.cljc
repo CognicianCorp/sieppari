@@ -23,7 +23,7 @@
         (if (a/async? ctx*)
           (a/catch ctx* (fn [e] (assoc ctx :error e)))
           ctx*))
-      (catch #?(:clj Exception :cljs :default) e
+      (catch #?(:clj Throwable :cljs :default) e
         (assoc ctx :error e)))
     ctx))
 
